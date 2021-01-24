@@ -3302,6 +3302,7 @@ static noinline int audit_inode_permission(struct inode *inode,
 					   int result,
 					   unsigned flags)
 {
+#ifdef CONFIG_AUDIT
 	struct common_audit_data ad;
 	struct inode_security_struct *isec = inode->i_security;
 	int rc;
@@ -3314,6 +3315,7 @@ static noinline int audit_inode_permission(struct inode *inode,
 			    audited, denied, result, &ad, flags);
 	if (rc)
 		return rc;
+#endif
 	return 0;
 }
 
@@ -5790,16 +5792,16 @@ static int selinux_nlmsg_perm(struct sock *sk, struct sk_buff *skb)
 			rc = 0;
 		} else {
 			return rc;
- 		}
- 
+		}
+
 		/* move to the next message after applying netlink padding */
 		msg_len = NLMSG_ALIGN(nlh->nlmsg_len);
 		if (msg_len >= data_len)
 			return 0;
 		data_len -= msg_len;
 		data += msg_len;
- 	}
- 
+	}
+
 	return rc;
 }
 
