@@ -150,7 +150,7 @@ static int sdcardfs_remount_fs2(struct vfsmount *mnt, struct super_block *sb,
 		err = -EINVAL;
 	}
 	/* @fs.sec -- 4DC77922893C8B8AE33DD84EE050EBBF -- */
-	pr_info("Remount options were %s\n", options);
+	pr_debug("Remount options were %s\n", options);
 	err = parse_options_remount(sb, options, *flags & ~MS_SILENT, mnt->data);
 
 
