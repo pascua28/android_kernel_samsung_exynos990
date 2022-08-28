@@ -354,6 +354,10 @@ config MODEL_X1SLTE
 	bool "Samsung Galaxy S20"
 	depends on SOC_EXYNOS9830
 
+config MODEL_R8S
+	bool "Samsung Galaxy S20 FE"
+	depends on SOC_EXYNOS9830
+
 config MODEL_Z3S
         bool "Samsung S20 Ultra"
         depends on SOC_EXYNOS9830
