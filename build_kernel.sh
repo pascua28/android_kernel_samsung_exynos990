@@ -7,6 +7,7 @@ mkdir ${DTB_DIR}/exynos
 
 export PLATFORM_VERSION=11
 export ANDROID_MAJOR_VERSION=r
+export SEC_BUILD_CONF_VENDOR_BUILD_OS=13
 
 make O=out ARCH=arm64 exynos9830-r8slte_defconfig
 
