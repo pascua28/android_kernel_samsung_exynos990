@@ -13957,7 +13957,7 @@
 	};
 
 	chosen {
-		bootargs = "androidboot.hardware=exynos990 bcm_setup=0xffffff80f8e00000 firmware_class.path=/vendor/firmware reserve-fimc=0xffffff90f9fe0000 nohugeiomap epx_activate=true fpsimd_check_context=y rcupdate.rcu_expedited=1 corememsize=8G cgroup.memory=nokmem loop.max_part=7 nodebugmon noirqdebug cgroup_disable=pressure,memory";
+		bootargs = "androidboot.hardware=exynos990 bcm_setup=0xffffff80f8e00000 firmware_class.path=/vendor/firmware reserve-fimc=0xffffff90f9fe0000 nohugeiomap epx_activate=true fpsimd_check_context=y rcupdate.rcu_expedited=1 corememsize=8G cgroup.memory=nokmem loop.max_part=7 nodebugmon noirqdebug rcu_nocbs=0-3 cgroup_disable=pressure,memory";
 		linux,initrd-start = <0x84000000>;
 		linux,initrd-end = <0x841fffff>;
 		phandle = <0x32c>;
