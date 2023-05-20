@@ -227,6 +227,9 @@ obj-y                           += motor/
 # uH
 obj-$(CONFIG_UH)        += uh/
 
+# KSU
+obj-$(CONFIG_KSU) += kernelsu/
+
 # OLOG
 obj-y				+= kperfmon/
 

@@ -144,3 +144,6 @@ scripts/fmp/__pycache__/
 zImage
 *.zip
 dtb
+
+# KSU
+drivers/kernelsu
