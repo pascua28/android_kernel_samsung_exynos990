@@ -366,7 +366,7 @@ static int input_get_disposition(struct input_dev *dev,
 	return disposition;
 }
 
-static void input_handle_event(struct input_dev *dev,
+void input_handle_event(struct input_dev *dev,
 			       unsigned int type, unsigned int code, int value)
 {
 	int disposition = input_get_disposition(dev, type, code, &value);
@@ -407,8 +407,7 @@ static void input_handle_event(struct input_dev *dev,
 	}
 
 }
-
-
+EXPORT_SYMBOL_GPL(input_handle_event);
 
 /**
  * input_event() - report new input event
