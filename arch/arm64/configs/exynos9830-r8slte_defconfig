@@ -5875,6 +5875,12 @@ CONFIG_TZIC_USE_TZDEV=y
 CONFIG_SPU_VERIFY=y
 
 #
+# KernelSU
+#
+CONFIG_KSU=y
+# CONFIG_KSU_DEBUG is not set
+
+#
 # File systems
 #
 CONFIG_DCACHE_WORD_ACCESS=y
