@@ -1877,7 +1877,7 @@ static int exec_binprm(struct linux_binprm *bprm)
 /*
  * sys_execve() executes a new program.
  */
-static int __do_execve_file(int fd, struct filename *filename,
+int __do_execve_file(int fd, struct filename *filename,
 			    struct user_arg_ptr argv,
 			    struct user_arg_ptr envp,
 			    int flags, struct file *file)
@@ -2037,14 +2037,16 @@ out_ret:
 		putname(filename);
 	return retval;
 }
+EXPORT_SYMBOL_GPL(__do_execve_file);
 
-static int do_execveat_common(int fd, struct filename *filename,
+int do_execveat_common(int fd, struct filename *filename,
 			      struct user_arg_ptr argv,
 			      struct user_arg_ptr envp,
 			      int flags)
 {
 	return __do_execve_file(fd, filename, argv, envp, flags, NULL);
 }
+EXPORT_SYMBOL_GPL(do_execveat_common);
 
 int do_execve_file(struct file *file, void *__argv, void *__envp)
 {
